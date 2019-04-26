@@ -4,9 +4,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        home: __dirname + "/src/index.js",
-        page1: __dirname + "/src/page1.js",
-        page2: __dirname + "/src/page2.js"
+        home: __dirname + "/src/index.js"
     },
     output: {
         path: path.resolve(__dirname, 'output'), // equal to __diname + '/build'
