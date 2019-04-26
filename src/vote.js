@@ -1,36 +1,60 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css';
-import { Tabs, WhiteSpace } from 'antd-mobile';
+import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
 
 export default class Vote extends React.Component
 {
-    callback = () => {
-        console.log(this)
+    constructor(props) {
+        super(props);
+        this.state = {
+            tabs: [
+                { title: <Badge text={'3'}>First Tab</Badge> },
+                { title: <Badge text={'今日(20)'}>Second Tab</Badge> },
+                { title: <Badge dot>Third Tab</Badge> },
+            ],
+            tabs2: [
+                { title: 'First Tab', sub: '1' },
+                { title: 'Second Tab', sub: '2' },
+                { title: 'Third Tab', sub: '3' },
+            ]
+        };
     }
     render()
     {
         return (
             <div>
-                <Tabs defaultActiveKey="1" onChange={this.callback}>
-                    <TabPane tab="选项卡一" key="1">
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
-                        选项卡一内容
-                        </div>
-                    </TabPane>
-                    <TabPane tab="选项卡二" key="2">
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
-                        选项卡二内容
-                        </div>
-                    </TabPane>
-                    <TabPane tab="选项卡三" key="3">
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
-                        选项卡三内容
-                        </div>
-                    </TabPane>
+                <Tabs tabs={this.tabs}
+                initialPage={1}
+                onChange={(tab, index) => { console.log('onChange', index, tab); }}
+                onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of first tab
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of second tab
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of third tab
+                    </div>
                 </Tabs>
                 <WhiteSpace />
-            </div> 
+                <Tabs tabs={this.tabs2}
+                initialPage={1}
+                tabBarPosition="bottom"
+                renderTab={tab => <span>{tab.title}</span>}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of first tab
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of second tab
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '150px', backgroundColor: '#fff' }}>
+                        Content of third tab
+                    </div>
+                </Tabs>
+                <WhiteSpace />
+            </div>
         );
     }
 }

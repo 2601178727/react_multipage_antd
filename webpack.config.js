@@ -29,7 +29,7 @@ module.exports = {
                         presets: [
                             'react',
                             'es2015',
-                            // {"plugins": ["@babel/plugin-proposal-class-properties"]} 
+                            {"plugins": ["babel-plugin-transform-class-properties"]} 
                         ]
                     }
                 },
