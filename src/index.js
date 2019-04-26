@@ -17,7 +17,7 @@ export default class Home extends React.Component
                 <Step title="重启服务" description="新文件加入后需要重启服务才能使用热更新" />
                 <Step title="访问地址" description="http://localhost:3000/[pathName]" />
                 <Step title="antd-UI文档" description="https://ant.design/components/steps-cn/" />
-                <Step title="antd--mobile-UI文档" description="http://design.alipay.com/develop/mobile/components/steps/" />
+                <Step title="antd--mobile-UI文档" description="https://mobile.ant.design/docs/react/introduce-cn" />
                 <Step title="UI设计" description="https://lanhuapp.com/web/#/item/project/board?pid=4be4b486-e73a-4fc8-af34-4d4772bb4be0" />
             </Steps>
         );
