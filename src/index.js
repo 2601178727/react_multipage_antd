@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
-import { Steps } from 'antd';
+import 'antd-mobile/dist/antd-mobile.css';
+import { Steps } from 'antd-mobile';
 const Step = Steps.Step;
 
 export default class Home extends React.Component
