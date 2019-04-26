@@ -1,7 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd-mobile/dist/antd-mobile.css';
-import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
+// import 'antd-mobile/dist/antd-mobile.css';
+// import { Tabs, WhiteSpace, Badge } from 'antd-mobile';
+import Tabs from 'antd-mobile/lib/tabs';  // 加载 JS
+import WhiteSpace from 'antd-mobile/lib/white-space';  // 加载 JS
+import Badge from 'antd-mobile/lib/badge';  // 加载 JS
+import 'antd-mobile/lib/tabs/style/css';        // 加载 CSS
+import 'antd-mobile/lib/white-space/style/css';        // 加载 CSS
+import 'antd-mobile/lib/badge/style/css';        // 加载 CSS
 
 export default class Vote extends React.Component
 {
@@ -20,11 +26,13 @@ export default class Vote extends React.Component
             ]
         };
     }
+    
     render()
     {
         return (
             <div>
-                <Tabs tabs={this.tabs}
+                123123
+                <Tabs tabs={this.state.tabs}
                 initialPage={1}
                 onChange={(tab, index) => { console.log('onChange', index, tab); }}
                 onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}>
@@ -39,7 +47,7 @@ export default class Vote extends React.Component
                     </div>
                 </Tabs>
                 <WhiteSpace />
-                <Tabs tabs={this.tabs2}
+                <Tabs tabs={this.state.tabs2}
                 initialPage={1}
                 tabBarPosition="bottom"
                 renderTab={tab => <span>{tab.title}</span>}>
